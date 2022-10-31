@@ -29,6 +29,38 @@ namespace testesLinq
                 new Categoria{Id = 3, Status = true, Nome = "Vestuarios"}
             };
 
+            //// valor total da lista
+            //var valorTotal = listaProdutos.Sum(prod => prod.Valor);
+
+            //// media do valor da lista
+            //var mediaLista = listaProdutos.Average(prod => prod.Valor);
+
+            //// Total de itens lista
+
+            //var qtdLista = listaProdutos.Count();
+
+            //Console.WriteLine($"Valor Total: {valorTotal}");
+            //Console.WriteLine($"Media: {mediaLista}");
+            //Console.WriteLine($"Total Itens: {qtdLista}");
+
+            //// criar lista com range de numeros
+
+            //var range = Enumerable.Range(1, 15);
+
+            //foreach (var item in range)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            // criar uma lista com varios itens semelhantes
+
+            //var listaProdutosIguais = Enumerable.Repeat(new Produto() { Id = 1 }, 5);
+
+            //foreach (var item in listaProdutosIguais)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
             //var resultado = from produto in listaProdutos 
             //                where produto.Nome.ToLower() == "Microondas".ToLower()
             //select produto;
@@ -96,35 +128,43 @@ namespace testesLinq
             //}
 
 
-            var resultado = listaProdutos.Where(prod => prod.Id >= 2 && prod.Id <= 5);
+            //    var resultado = listaProdutos.Where(prod => prod.Id >= 2 && prod.Id <= 5);
 
-            foreach (var item in resultado)
-            {
-                Console.WriteLine($" Id: {item.Id} | Nome: {item.Nome}");
-            }
+            //    foreach (var item in resultado)
+            //    {
+            //        Console.WriteLine($" Id: {item.Id} | Nome: {item.Nome}");
+            //    }
+
+            //var resultado = listaProdutos.Skip(3).Take(3);
+
+            //foreach (var item in resultado)
+            //{
+            //    Console.WriteLine($"ID: {item.Id} | Nome: {item.Nome} ");
+            //}
+
         }
-    }
 
-    class Produto
-    {
-        public int Id { get; set; }
-        public string Nome { get; set; }
-        public bool Status { get; set; }
-        public decimal Valor { get; set; }
-        public int CategoriaId { get; set; }
-    }
+        class Produto
+        {
+            public int Id { get; set; }
+            public string Nome { get; set; }
+            public bool Status { get; set; }
+            public decimal Valor { get; set; }
+            public int CategoriaId { get; set; }
+        }
 
-    class Categoria
-    {
-        public int Id { get; set; }
-        public string Nome { get; set; }
-        public bool Status { get; set; }
-    }
+        class Categoria
+        {
+            public int Id { get; set; }
+            public string Nome { get; set; }
+            public bool Status { get; set; }
+        }
 
-    class ProdutoDto
-    {
-        public string Nome { get; set; }
-        public bool Status { get; set; }
-        public decimal Valor { get; set; }
+        class ProdutoDto
+        {
+            public string Nome { get; set; }
+            public bool Status { get; set; }
+            public decimal Valor { get; set; }
+        }
     }
 }
